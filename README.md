@@ -29,6 +29,12 @@ file="sample1
 for i in $file
 do
 echo $i
-stringtie -e -B -p 8 -G GCF_000767855.1_Ca_bactrianus_MBC_1.0_genomic.gff -o camel${i}/${i}.gtf /bam/${i}.bam
+stringtie -e -B -p 8 -G GCF_000767855.1_Ca_bactrianus_MBC_1.0_genomic.gff -A ${i}.gene.abundance -o camel${i}/${i}.gtf /bam/${i}.bam
 done
-```
+```       
+# 5.Merge gene abundance to get the gene abundance matrix   
+`python3.5 allsample_abundence_martrix.py -l path.list > allsample.gene.abundance`    
+# 6.Obtain the reads count matrix for gene/transcript    
+`python prepDE.py -i sample_list.txt  -g gene_count_matrix.csv  -o transcript_count_matrix.csv`       
+# 7. Calculate Differentially expressed genes   
+DEseq2/edgeR    

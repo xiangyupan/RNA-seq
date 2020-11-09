@@ -37,4 +37,6 @@ done
 # 6.Obtain the reads count matrix for gene/transcript    
 `python prepDE.py -i sample_list.txt  -g gene_count_matrix.csv  -o transcript_count_matrix.csv`       
 # 7. Calculate Differentially expressed genes   
-DEseq2/edgeR    
+DEseq2/edgeR   
+_________________________________________________
+If you have any questions, please don't be hestitate to contact me: [pan_xiangyu@nwafu.edu.cn](pan_xiangyu@nwafu.edu.cn)\*\*

@@ -14,11 +14,21 @@ export OUT=/Camel/bam
 export BAM=//Camel/bam      
 export TMP=/Camel/tmp     
 for i in \    
-1725_HFKKJALXX_L5      
+sample1      
 do      
 STAR --genomeDir $INDEX --readFilesIn $IN/${i}_1.clean.fq.gz $IN/${i}_2.clean.fq.gz --readFilesCommand zcat --runThreadN 8 --outFilterMultimapNmax 1 --outFilterIntronMotifs RemoveNoncanonical Unannotated --outFilterMismatchNmax 10 --outSAMstrandField intronMotif --outSJfilterReads Unique --outSAMtype BAM Unsorted --outReadsUnmapped Fastx --outFileNamePrefix $OUT/${i}     
 java -Djava.io.tmpdir=$TMP -jar picard.jar CleanSam I=$OUT/${i}Aligned.out.bam O=$OUT/${i}.STAR.bam     
 done
+```     
+# 4.Calculate gene abundance    
+```     
+#!/bin/sh
+export PATH=/stor9000/apps/appsoftware/BioSoftware/bin:$PATH
+file="sample1
+"
+for i in $file
+do
+echo $i
+stringtie -e -B -p 8 -G GCF_000767855.1_Ca_bactrianus_MBC_1.0_genomic.gff -o camel${i}/${i}.gtf /bam/${i}.bam
+done
 ```
-
-

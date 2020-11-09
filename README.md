@@ -39,4 +39,4 @@ done
 # 7. Calculate Differentially expressed genes   
 DEseq2/edgeR   
 _________________________________________________
-If you have any questions, please don't be hestitate to contact me: [pan_xiangyu@nwafu.edu.cn](pan_xiangyu@nwafu.edu.cn)\*\*
+If you have any questions, please don't be hestitate to contact me: [pan_xiangyu@nwafu.edu.cn](pan_xiangyu@nwafu.edu.cn)      
